@@ -1,10 +1,30 @@
 # laporan-keuangan-bot
-Laporan keuangan, pencatatan pengeluaran dengan Bot Telegram yang terintegrasi dengan Google Spreadsheet
+[![Version](https://img.shields.io/badge/Version-2.0.1-green)]()
+[![Beta](https://img.shields.io/badge/Beta-orange)]()<br>
+Laporan keuangan, pencataan pemasukan dan pengeluaran dengan Bot Telegram yang terintegrasi dengan Google Spreadsheet
 
-## Video Tutorial
-https://youtu.be/T5NnHxzzqLw
+### Video Tutorial
+https://youtu.be/sII577Ubv-E
 
-<img src="https://user-images.githubusercontent.com/101353193/181287924-5cb3b590-d841-4a52-a4a0-f412072ce246.jpg" width="45%"> <img src="https://user-images.githubusercontent.com/101353193/181287939-faaeaf1d-7064-40f4-93cf-e3318a93a957.jpg" width="45%">
+<br>
+<img src="https://github.com/tegohsx/laporan-keuangan-bot/assets/101353193/d8aaafe8-62f6-45a0-bf8c-7934f61c7d3b" width="50%">
+
+
+### Yang ada di bot
+1. Input pemasukan: <code>/masuk [nominal] [#kategori] [item1, item2, keterangan dsb.]</code> <br>
+   Contoh:  <br>
+      /masuk 100000 #gaji angkut barang <br>
+2. Input pengeluaran: <code>/keluar [nominal] [#kategori] [item1, item2, keterangan dsb.]</code> <br>
+   Contoh:  <br>
+      /keluar 50000 #makan roti dan kopi <br>
+3. Rekapitulasi: <code>/rekap [tanggal/bulan] [tanggal/bulan (opsional)]</code> <br>
+   Tanggal dan bulan berformat YYYY-MM-DD dan YYYY-MM <br>
+   Contoh: <br>
+      /rekap 2024-02-01<br>
+      /rekap 2024-02-01 2024-02-10<br>
+      /rekap 2024-02<br>
+      /rekap 2024-02 2024-06<br>
+
 
 # Mulai
 
@@ -14,30 +34,34 @@ https://youtu.be/T5NnHxzzqLw
 3. Masukkan nama kemudian username.
 4. Setelah berhasil maka akan mendapatkan Bot Token.
 
-## Buat Spreadsheet dengan kolom:
-1. ID
-2. Tanggal
-3. Kategori
-4. Item
-5. Harga
-6. ID Pelapor
-7. Nama Pelapor
+## Buat Spreadsheet
+Buat dua sheet untuk pemasukan dan pengeluaran dengan kolom:
+1. _id
+2. _date
+3. Tanggal
+4. Kategori
+5. Item
+6. Nominal
+7. ReporterID
+8. ReporterName
 
 ## Buat Apps Script
-1. Buka index.gs
-2. Sesuaikan Token, Spreadsheet URL, Nama sheet, dan Pengguna bot (Chat ID*)
-3. Deploy sebagai Web app, dan simpan urlnya
+1. Copy Kode.gs
+2. Sesuaikan Token, Spreadsheet URL, dan Nama Sheet untuk pemasukan dan pengeluaran
+3. Tambahkan Library dengan ID: <code>1CZD-ai-ImkabBPSBVOqnFFWlXoA5kUEfoXvUXOC3uQHr_qpF1H7amHMr</code>
+4. Deploy sebagai Web app, dan simpan URL-nya
 
 ## Set webhook Bot Telegram
-1. Buka di browser https://api.telegram.org/bot[token]/setwebhook?url=[url hasil deploy]
+1. Buka di browser <code>https[]()://api.telegram.org/bot[token]/setwebhook?url=[url hasil deploy]?users=ChatID1,ChatID2,...</code><br>
+Sesuaikan ChatID* dengan user yang akan menggunakan bot, bisa lebih dari satu, pisahkan dengan koma.
 
 ## *Note:
-Untuk mendapatkan Chat ID, buka telegram, search @getYourID_bot atau https://t.me/getyourid_bot
+Untuk mendapatkan Chat ID, buka telegram, search <code>@getYourID_bot</code> atau https://t.me/getyourid_bot
 
 
 ## Contact
 Telegram: https://t.me/mastgh <br>
-WhatsApp: +62 851-5541-1484
+WhatsApp: +62 855-1000-113
 
 ## Donasi
 Paypal tegohsx@gmail.com <br>
